@@ -39,3 +39,10 @@
 	font-size: 1.5em;
 	font-weight: bold;
 }
+
+.todo {
+	position: absolute;
+	top: 30%;
+	left: 35%;
+	color: antiquewhite;
+}
