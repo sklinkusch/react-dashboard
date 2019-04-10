@@ -11,9 +11,6 @@ export default class Background extends Component {
   componentDidMount() {
     this.request();
   }
-  componentDidUpdate() {
-    this.request();
-  }
   render() {
     return <div className="background" style={{ backgroundImage: `url(${this.state.image})`, backgroundSize: "cover", position: "fixed", top: 0, bottom: 0, left: 0, right: 0 }} />;
   }
@@ -24,6 +21,7 @@ export default class Background extends Component {
       const object = await response;
       this.save(object.url);
     };
+    request();
   }
   save(url) {
     this.setState({
