@@ -46,3 +46,12 @@
 	left: 35%;
 	color: antiquewhite;
 }
+
+.widget {
+	color: antiquewhite;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	font-weight: bold;
+}
+

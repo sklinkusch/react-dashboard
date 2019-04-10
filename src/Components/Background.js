@@ -12,7 +12,7 @@ export default class Background extends Component {
     this.request();
   }
   render() {
-    return <div className="background" style={{ backgroundImage: `url(${this.state.image})`, backgroundSize: "cover", position: "fixed", top: 0, bottom: 0, left: 0, right: 0 }} />;
+    return <div className="background" style={{ backgroundImage: `url(${this.state.image})`, backgroundSize: "cover", position: "fixed", top: 0, bottom: 0, left: 0, right: 0 }}>{this.props.children}</div>;
   }
   request = () => {
     const url = "https://source.unsplash.com/random/800x600?space";
