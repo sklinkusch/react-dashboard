@@ -3,9 +3,8 @@ import React, { Component } from 'react'
 export default class ToDo extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      todo: []
-    }
+    this.state = {};
+    this.state.todo = JSON.parse(localStorage.getItem("todo")) || [];
   }
   handleSubmit(event) {
     if (event.key === 'Enter') {
@@ -13,6 +12,7 @@ export default class ToDo extends Component {
       const allItems = this.state.todo;
       const mergedItems = allItems.concat(newItem);
       this.setState({ todo: mergedItems });
+      localStorage.setItem('todo', JSON.stringify(mergedItems));
       event.target.value = "";
     }
   }
