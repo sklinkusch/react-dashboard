@@ -1,7 +1,25 @@
 import React, { Component } from 'react';
 
 export default class Clock extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			dateDe: new Date()
+		};
+		//
+	}
+	componentDidMount() {
+		this.timerId = setInterval(() => this.tick(), 1000);
+	}
+	componentWillUnmount() {
+		clearInterval(this.timerId);
+	}
+	tick() {
+		this.setState({
+			dateDe: new Date()
+		});
+	}
 	render() {
-		return <div className="clock">123</div>;
+		return <h1 className="clock">{this.state.dateDe.toLocaleTimeString('de')} </h1>;
 	}
 }
