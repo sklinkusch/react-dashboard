@@ -9,15 +9,25 @@ export default class Background extends Component {
     };
   }
   componentDidMount() {
+    this.request();
+  }
+  componentDidUpdate() {
+    this.request();
+  }
+  render() {
+    return <div className="background" style={{ backgroundImage: `url(${this.state.image})`, backgroundSize: "cover", position: "fixed", top: 0, bottom: 0, left: 0, right: 0 }} />;
+  }
+  request = () => {
     const url = "https://source.unsplash.com/random/800x600?space";
     const request = async () => {
       const response = await fetch(url);
       const object = await response;
-      console.log(object.url);
+      this.save(object.url);
     };
-    request();
   }
-  render() {
-    return <div className="background" />;
+  save(url) {
+    this.setState({
+      image: url
+    });
   }
 }
