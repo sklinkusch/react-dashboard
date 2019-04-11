@@ -51,7 +51,24 @@
 	color: antiquewhite;
 	position: absolute;
 	right: 10px;
-	top: 10px;
+	top: 20px;
 	font-weight: bold;
 }
+button {
+	background: transparent;
+	border: none;
+	outline: none;
+}
 
+button img {
+	width: 40px;
+	border: 2px double white;
+	border-radius: 50%;
+	animation: spin 4s linear infinite;
+}
+@keyframes spin {
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}

@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
+import widget from '../multimedia.png';
 
-export default class Widget extends Component {
-	render() {
-		return <div className="widget">
-    <button>
-      <img src="src/multimedia.png" />
-    </button>
-    
-    
-    
-    </div>;
-  }
-  
+export default function Widget(props) {
+	return (
+		<div className="widget">
+			<button onClick={() => props.onClick()}>
+				<img src={widget} alt="refresh" />
+			</button>
+		</div>
+	);
 }
