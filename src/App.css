@@ -72,3 +72,15 @@ button img {
 		transform: rotate(360deg);
 	}
 }
+
+.credentials {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	color: antiquewhite;
+}
+
+.credentials a {
+	text-decoration: none;
+	color: antiquewhite;
+}
